@@ -13,6 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Arrays;
+import java.util.Map;
+
 
 @Controller
 public class GreetingController {
@@ -23,7 +26,14 @@ public class GreetingController {
     }
     @GetMapping("/about")
     public String about(Model model) {
-        model.addAttribute("name", "Hello about");
+
+
+
+//        array = Arrays.asList(1, 2, 3);
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        model.addAttribute("arr",cars);
+//                model.addAttribute("name", "Hello about");
+//        template.set("attr", Arrays.asList(1, 2, 3));
         return "about";
 
     }
